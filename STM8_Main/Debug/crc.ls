@@ -334,7 +334,7 @@
  477                     ; 53 }
  480  0062 85            	popw	x
  481  0063 81            	ret
- 506                     	xdef	_get_crc_by_byte
- 507                     	xdef	_get_crc
- 508                     	xdef	_crc16_table
+ 506                     	xdef	_crc16_table
+ 507                     	xdef	_get_crc_by_byte
+ 508                     	xdef	_get_crc
  527                     	end

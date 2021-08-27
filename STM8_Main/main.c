@@ -8,6 +8,10 @@
 #define SHELLER_DATA_LENGTH 8
 sheller_t shell;
 uint8_t receiveBuffer[SHELLER_DATA_LENGTH];
+uint8_t transmitBuffer[SHELLER_DATA_LENGTH + SHELLER_SERVICE_BYTES_COUNT];
+
+uint8_t transmitMessageIndex;
+uint8_t transmitMessage[SHELLER_DATA_LENGTH];
 
 static void CLK_Config(void);
 static void GPIO_Config(void);
@@ -28,6 +32,14 @@ void main()
 	while (1) {
 		if (sheller_read(&shell, receiveBuffer) == SHELLER_OK) {
 			GPIO_WriteReverse(GPIOB, GPIO_PIN_5);
+			transmitMessage[0] = 12;
+			transmitMessage[1] = 54;
+			transmitMessage[2] = 221;
+			sheller_wrap(&shell, transmitMessage, 3, transmitBuffer);
+			for (transmitMessageIndex = 0; transmitMessageIndex < (SHELLER_DATA_LENGTH + SHELLER_SERVICE_BYTES_COUNT); ++transmitMessageIndex) {
+				UART1_SendData8(transmitBuffer[transmitMessageIndex]);
+				while(UART1_GetFlagStatus(UART1_FLAG_TXE) == RESET);
+			}
 		}
 	}
 }

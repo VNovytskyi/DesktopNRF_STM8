@@ -1,207 +1,253 @@
    1                     ; C Compiler for STM8 (COSMIC Software)
    2                     ; Parser V4.12.5 - 16 Jun 2021
    3                     ; Generator (Limited) V4.5.3 - 16 Jun 2021
-  52                     ; 20 void main()
-  52                     ; 21 {
-  54                     	switch	.text
-  55  0000               _main:
-  59                     ; 22 	CLK_Config();
-  61  0000 ad59          	call	L3_CLK_Config
-  63                     ; 23 	GPIO_Config();
-  65  0002 ad64          	call	L5_GPIO_Config
-  67                     ; 24 	UART1_Config();
-  69  0004 ad74          	call	L7_UART1_Config
-  71                     ; 25 	Sheller_Config();
-  73  0006 cd00a3        	call	L11_Sheller_Config
-  75                     ; 27 	enableInterrupts();
-  78  0009 9a            rim
-  80  000a               L33:
-  81                     ; 29 		if (sheller_read(&shell, receiveBuffer) == SHELLER_OK) {
-  83  000a ae0000        	ldw	x,#_receiveBuffer
-  84  000d 89            	pushw	x
-  85  000e ae0008        	ldw	x,#_shell
-  86  0011 cd0000        	call	_sheller_read
-  88  0014 85            	popw	x
-  89  0015 a101          	cp	a,#1
-  90  0017 26f1          	jrne	L33
-  91                     ; 30 			GPIO_WriteReverse(GPIOB, GPIO_PIN_5);
-  93  0019 4b20          	push	#32
-  94  001b ae5005        	ldw	x,#20485
-  95  001e cd0000        	call	_GPIO_WriteReverse
-  97  0021 84            	pop	a
-  98  0022 20e6          	jra	L33
- 125                     ; 35 @far @interrupt void UART1_RX_IRQ(void) 
- 125                     ; 36 {
- 127                     	switch	.text
- 128  0024               f_UART1_RX_IRQ:
- 130  0024 8a            	push	cc
- 131  0025 84            	pop	a
- 132  0026 a4bf          	and	a,#191
- 133  0028 88            	push	a
- 134  0029 86            	pop	cc
- 135  002a 3b0002        	push	c_x+2
- 136  002d be00          	ldw	x,c_x
- 137  002f 89            	pushw	x
- 138  0030 3b0002        	push	c_y+2
- 139  0033 be00          	ldw	x,c_y
- 140  0035 89            	pushw	x
- 143                     ; 37 	sheller_push(&shell, UART1_ReceiveData8());
- 145  0036 cd0000        	call	_UART1_ReceiveData8
- 147  0039 88            	push	a
- 148  003a ae0008        	ldw	x,#_shell
- 149  003d cd0000        	call	_sheller_push
- 151  0040 84            	pop	a
- 152                     ; 39 	if (UART1_GetFlagStatus(UART1_FLAG_OR) == SET) {
- 154  0041 ae0008        	ldw	x,#8
- 155  0044 cd0000        	call	_UART1_GetFlagStatus
- 157  0047 a101          	cp	a,#1
- 158  0049 2603          	jrne	L15
- 159                     ; 40 		UART1_ReceiveData8();
- 161  004b cd0000        	call	_UART1_ReceiveData8
- 163  004e               L15:
- 164                     ; 42 }
- 167  004e 85            	popw	x
- 168  004f bf00          	ldw	c_y,x
- 169  0051 320002        	pop	c_y+2
- 170  0054 85            	popw	x
- 171  0055 bf00          	ldw	c_x,x
- 172  0057 320002        	pop	c_x+2
- 173  005a 80            	iret
- 197                     ; 44 static void CLK_Config(void)
- 197                     ; 45 {
- 199                     	switch	.text
- 200  005b               L3_CLK_Config:
- 204                     ; 46 	CLK_DeInit();
- 206  005b cd0000        	call	_CLK_DeInit
- 208                     ; 47 	CLK_SYSCLKConfig(CLK_PRESCALER_CPUDIV1);
- 210  005e a680          	ld	a,#128
- 211  0060 cd0000        	call	_CLK_SYSCLKConfig
- 213                     ; 48 	CLK_SYSCLKConfig(CLK_PRESCALER_HSIDIV1);	
- 215  0063 4f            	clr	a
- 216  0064 cd0000        	call	_CLK_SYSCLKConfig
- 218                     ; 49 }
- 221  0067 81            	ret
- 246                     ; 51 static void GPIO_Config(void)
- 246                     ; 52 {
- 247                     	switch	.text
- 248  0068               L5_GPIO_Config:
- 252                     ; 53 	GPIO_DeInit(GPIOB);
- 254  0068 ae5005        	ldw	x,#20485
- 255  006b cd0000        	call	_GPIO_DeInit
- 257                     ; 54 	GPIO_Init(GPIOB, GPIO_PIN_5, GPIO_MODE_OUT_PP_LOW_FAST);
- 259  006e 4be0          	push	#224
- 260  0070 4b20          	push	#32
- 261  0072 ae5005        	ldw	x,#20485
- 262  0075 cd0000        	call	_GPIO_Init
- 264  0078 85            	popw	x
- 265                     ; 55 }
- 268  0079 81            	ret
- 295                     ; 57 static void UART1_Config(void)
- 295                     ; 58 {
- 296                     	switch	.text
- 297  007a               L7_UART1_Config:
- 301                     ; 59 	UART1_DeInit();
- 303  007a cd0000        	call	_UART1_DeInit
- 305                     ; 60 	UART1_Init(9600, 
- 305                     ; 61 							UART1_WORDLENGTH_8D, 
- 305                     ; 62 							UART1_STOPBITS_1, 
- 305                     ; 63 							UART1_PARITY_NO, 
- 305                     ; 64 							UART1_SYNCMODE_CLOCK_DISABLE, 
- 305                     ; 65 							UART1_MODE_TXRX_ENABLE);
- 307  007d 4b0c          	push	#12
- 308  007f 4b80          	push	#128
- 309  0081 4b00          	push	#0
- 310  0083 4b00          	push	#0
- 311  0085 4b00          	push	#0
- 312  0087 ae2580        	ldw	x,#9600
- 313  008a 89            	pushw	x
- 314  008b ae0000        	ldw	x,#0
- 315  008e 89            	pushw	x
- 316  008f cd0000        	call	_UART1_Init
- 318  0092 5b09          	addw	sp,#9
- 319                     ; 68 	UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
- 321  0094 4b01          	push	#1
- 322  0096 ae0205        	ldw	x,#517
- 323  0099 cd0000        	call	_UART1_ITConfig
- 325  009c 84            	pop	a
- 326                     ; 69 	UART1_Cmd(ENABLE);	
- 328  009d a601          	ld	a,#1
- 329  009f cd0000        	call	_UART1_Cmd
- 331                     ; 70 }
- 334  00a2 81            	ret
- 370                     ; 72 static void Sheller_Config(void)
- 370                     ; 73 {
- 371                     	switch	.text
- 372  00a3               L11_Sheller_Config:
- 374  00a3 88            	push	a
- 375       00000001      OFST:	set	1
- 378                     ; 74 	uint8_t init_result = sheller_init(&shell, 0x23, SHELLER_DATA_LENGTH, 128);
- 380  00a4 ae0080        	ldw	x,#128
- 381  00a7 89            	pushw	x
- 382  00a8 4b08          	push	#8
- 383  00aa 4b23          	push	#35
- 384  00ac ae0008        	ldw	x,#_shell
- 385  00af cd0000        	call	_sheller_init
- 387  00b2 5b04          	addw	sp,#4
- 388  00b4 6b01          	ld	(OFST+0,sp),a
- 390                     ; 75 	if (init_result == SHELLER_ERROR) {
- 392  00b6 0d01          	tnz	(OFST+0,sp)
- 393  00b8 2602          	jrne	L121
- 394  00ba               L321:
- 395                     ; 76 		while(1);
- 397  00ba 20fe          	jra	L321
- 398  00bc               L121:
- 399                     ; 78 }
- 402  00bc 84            	pop	a
- 403  00bd 81            	ret
- 437                     ; 80 static void delay_ticks(uint32_t t) {
- 438                     	switch	.text
- 439  00be               L31_delay_ticks:
- 441       00000000      OFST:	set	0
- 444  00be               L741:
- 445                     ; 81     while(--t);
- 447  00be 96            	ldw	x,sp
- 448  00bf 1c0003        	addw	x,#OFST+3
- 449  00c2 a601          	ld	a,#1
- 450  00c4 cd0000        	call	c_lgsbc
- 452  00c7 96            	ldw	x,sp
- 453  00c8 1c0003        	addw	x,#OFST+3
- 454  00cb cd0000        	call	c_lzmp
- 456  00ce 26ee          	jrne	L741
- 457                     ; 82 }
- 460  00d0 81            	ret
- 495                     ; 85 void assert_failed(uint8_t* file, uint32_t line)
- 495                     ; 86 {
- 496                     	switch	.text
- 497  00d1               _assert_failed:
- 501  00d1               L171:
- 502  00d1 20fe          	jra	L171
- 611                     	xdef	_main
- 612                     	xdef	f_UART1_RX_IRQ
- 613                     	switch	.ubsct
- 614  0000               _receiveBuffer:
- 615  0000 000000000000  	ds.b	8
- 616                     	xdef	_receiveBuffer
- 617  0008               _shell:
- 618  0008 000000000000  	ds.b	14
- 619                     	xdef	_shell
- 620                     	xref	_sheller_read
- 621                     	xref	_sheller_push
- 622                     	xref	_sheller_init
- 623                     	xdef	_assert_failed
- 624                     	xref	_UART1_GetFlagStatus
- 625                     	xref	_UART1_ReceiveData8
- 626                     	xref	_UART1_ITConfig
- 627                     	xref	_UART1_Cmd
- 628                     	xref	_UART1_Init
- 629                     	xref	_UART1_DeInit
- 630                     	xref	_GPIO_WriteReverse
- 631                     	xref	_GPIO_Init
- 632                     	xref	_GPIO_DeInit
- 633                     	xref	_CLK_SYSCLKConfig
- 634                     	xref	_CLK_DeInit
- 635                     	xref.b	c_x
- 636                     	xref.b	c_y
- 656                     	xref	c_lzmp
- 657                     	xref	c_lgsbc
- 658                     	end
+  58                     ; 24 void main()
+  58                     ; 25 {
+  60                     	switch	.text
+  61  0000               _main:
+  65                     ; 26 	CLK_Config();
+  67  0000 cd0098        	call	L3_CLK_Config
+  69                     ; 27 	GPIO_Config();
+  71  0003 cd00a5        	call	L5_GPIO_Config
+  73                     ; 28 	UART1_Config();
+  75  0006 cd00b7        	call	L7_UART1_Config
+  77                     ; 29 	Sheller_Config();
+  79  0009 cd00e0        	call	L11_Sheller_Config
+  81                     ; 31 	enableInterrupts();
+  84  000c 9a            rim
+  86  000d               L33:
+  87                     ; 33 		if (sheller_read(&shell, receiveBuffer) == SHELLER_OK) {
+  89  000d ae0014        	ldw	x,#_receiveBuffer
+  90  0010 89            	pushw	x
+  91  0011 ae001c        	ldw	x,#_shell
+  92  0014 cd0000        	call	_sheller_read
+  94  0017 85            	popw	x
+  95  0018 a101          	cp	a,#1
+  96  001a 26f1          	jrne	L33
+  97                     ; 34 			GPIO_WriteReverse(GPIOB, GPIO_PIN_5);
+  99  001c 4b20          	push	#32
+ 100  001e ae5005        	ldw	x,#20485
+ 101  0021 cd0000        	call	_GPIO_WriteReverse
+ 103  0024 84            	pop	a
+ 104                     ; 35 			transmitMessage[0] = 12;
+ 106  0025 350c0000      	mov	_transmitMessage,#12
+ 107                     ; 36 			transmitMessage[1] = 54;
+ 109  0029 35360001      	mov	_transmitMessage+1,#54
+ 110                     ; 37 			transmitMessage[2] = 221;
+ 112  002d 35dd0002      	mov	_transmitMessage+2,#221
+ 113                     ; 38 			sheller_wrap(&shell, transmitMessage, 3, transmitBuffer);
+ 115  0031 ae0009        	ldw	x,#_transmitBuffer
+ 116  0034 89            	pushw	x
+ 117  0035 4b03          	push	#3
+ 118  0037 ae0000        	ldw	x,#_transmitMessage
+ 119  003a 89            	pushw	x
+ 120  003b ae001c        	ldw	x,#_shell
+ 121  003e cd0000        	call	_sheller_wrap
+ 123  0041 5b05          	addw	sp,#5
+ 124                     ; 39 			for (transmitMessageIndex = 0; transmitMessageIndex < (SHELLER_DATA_LENGTH + SHELLER_SERVICE_BYTES_COUNT); ++transmitMessageIndex) {
+ 126  0043 3f08          	clr	_transmitMessageIndex
+ 127  0045               L14:
+ 128                     ; 40 				UART1_SendData8(transmitBuffer[transmitMessageIndex]);
+ 130  0045 b608          	ld	a,_transmitMessageIndex
+ 131  0047 5f            	clrw	x
+ 132  0048 97            	ld	xl,a
+ 133  0049 e609          	ld	a,(_transmitBuffer,x)
+ 134  004b cd0000        	call	_UART1_SendData8
+ 137  004e               L15:
+ 138                     ; 41 				while(UART1_GetFlagStatus(UART1_FLAG_TXE) == RESET);
+ 140  004e ae0080        	ldw	x,#128
+ 141  0051 cd0000        	call	_UART1_GetFlagStatus
+ 143  0054 4d            	tnz	a
+ 144  0055 27f7          	jreq	L15
+ 145                     ; 39 			for (transmitMessageIndex = 0; transmitMessageIndex < (SHELLER_DATA_LENGTH + SHELLER_SERVICE_BYTES_COUNT); ++transmitMessageIndex) {
+ 147  0057 3c08          	inc	_transmitMessageIndex
+ 150  0059 b608          	ld	a,_transmitMessageIndex
+ 151  005b a10b          	cp	a,#11
+ 152  005d 25e6          	jrult	L14
+ 153  005f 20ac          	jra	L33
+ 180                     ; 47 @far @interrupt void UART1_RX_IRQ(void) 
+ 180                     ; 48 {
+ 182                     	switch	.text
+ 183  0061               f_UART1_RX_IRQ:
+ 185  0061 8a            	push	cc
+ 186  0062 84            	pop	a
+ 187  0063 a4bf          	and	a,#191
+ 188  0065 88            	push	a
+ 189  0066 86            	pop	cc
+ 190  0067 3b0002        	push	c_x+2
+ 191  006a be00          	ldw	x,c_x
+ 192  006c 89            	pushw	x
+ 193  006d 3b0002        	push	c_y+2
+ 194  0070 be00          	ldw	x,c_y
+ 195  0072 89            	pushw	x
+ 198                     ; 49 	sheller_push(&shell, UART1_ReceiveData8());
+ 200  0073 cd0000        	call	_UART1_ReceiveData8
+ 202  0076 88            	push	a
+ 203  0077 ae001c        	ldw	x,#_shell
+ 204  007a cd0000        	call	_sheller_push
+ 206  007d 84            	pop	a
+ 207                     ; 51 	if (UART1_GetFlagStatus(UART1_FLAG_OR) == SET) {
+ 209  007e ae0008        	ldw	x,#8
+ 210  0081 cd0000        	call	_UART1_GetFlagStatus
+ 212  0084 a101          	cp	a,#1
+ 213  0086 2603          	jrne	L56
+ 214                     ; 52 		UART1_ReceiveData8();
+ 216  0088 cd0000        	call	_UART1_ReceiveData8
+ 218  008b               L56:
+ 219                     ; 54 }
+ 222  008b 85            	popw	x
+ 223  008c bf00          	ldw	c_y,x
+ 224  008e 320002        	pop	c_y+2
+ 225  0091 85            	popw	x
+ 226  0092 bf00          	ldw	c_x,x
+ 227  0094 320002        	pop	c_x+2
+ 228  0097 80            	iret
+ 252                     ; 56 static void CLK_Config(void)
+ 252                     ; 57 {
+ 254                     	switch	.text
+ 255  0098               L3_CLK_Config:
+ 259                     ; 58 	CLK_DeInit();
+ 261  0098 cd0000        	call	_CLK_DeInit
+ 263                     ; 59 	CLK_SYSCLKConfig(CLK_PRESCALER_CPUDIV1);
+ 265  009b a680          	ld	a,#128
+ 266  009d cd0000        	call	_CLK_SYSCLKConfig
+ 268                     ; 60 	CLK_SYSCLKConfig(CLK_PRESCALER_HSIDIV1);	
+ 270  00a0 4f            	clr	a
+ 271  00a1 cd0000        	call	_CLK_SYSCLKConfig
+ 273                     ; 61 }
+ 276  00a4 81            	ret
+ 301                     ; 63 static void GPIO_Config(void)
+ 301                     ; 64 {
+ 302                     	switch	.text
+ 303  00a5               L5_GPIO_Config:
+ 307                     ; 65 	GPIO_DeInit(GPIOB);
+ 309  00a5 ae5005        	ldw	x,#20485
+ 310  00a8 cd0000        	call	_GPIO_DeInit
+ 312                     ; 66 	GPIO_Init(GPIOB, GPIO_PIN_5, GPIO_MODE_OUT_PP_LOW_FAST);
+ 314  00ab 4be0          	push	#224
+ 315  00ad 4b20          	push	#32
+ 316  00af ae5005        	ldw	x,#20485
+ 317  00b2 cd0000        	call	_GPIO_Init
+ 319  00b5 85            	popw	x
+ 320                     ; 67 }
+ 323  00b6 81            	ret
+ 350                     ; 69 static void UART1_Config(void)
+ 350                     ; 70 {
+ 351                     	switch	.text
+ 352  00b7               L7_UART1_Config:
+ 356                     ; 71 	UART1_DeInit();
+ 358  00b7 cd0000        	call	_UART1_DeInit
+ 360                     ; 72 	UART1_Init(9600, 
+ 360                     ; 73 							UART1_WORDLENGTH_8D, 
+ 360                     ; 74 							UART1_STOPBITS_1, 
+ 360                     ; 75 							UART1_PARITY_NO, 
+ 360                     ; 76 							UART1_SYNCMODE_CLOCK_DISABLE, 
+ 360                     ; 77 							UART1_MODE_TXRX_ENABLE);
+ 362  00ba 4b0c          	push	#12
+ 363  00bc 4b80          	push	#128
+ 364  00be 4b00          	push	#0
+ 365  00c0 4b00          	push	#0
+ 366  00c2 4b00          	push	#0
+ 367  00c4 ae2580        	ldw	x,#9600
+ 368  00c7 89            	pushw	x
+ 369  00c8 ae0000        	ldw	x,#0
+ 370  00cb 89            	pushw	x
+ 371  00cc cd0000        	call	_UART1_Init
+ 373  00cf 5b09          	addw	sp,#9
+ 374                     ; 80 	UART1_ITConfig(UART1_IT_RXNE_OR, ENABLE);
+ 376  00d1 4b01          	push	#1
+ 377  00d3 ae0205        	ldw	x,#517
+ 378  00d6 cd0000        	call	_UART1_ITConfig
+ 380  00d9 84            	pop	a
+ 381                     ; 81 	UART1_Cmd(ENABLE);	
+ 383  00da a601          	ld	a,#1
+ 384  00dc cd0000        	call	_UART1_Cmd
+ 386                     ; 82 }
+ 389  00df 81            	ret
+ 425                     ; 84 static void Sheller_Config(void)
+ 425                     ; 85 {
+ 426                     	switch	.text
+ 427  00e0               L11_Sheller_Config:
+ 429  00e0 88            	push	a
+ 430       00000001      OFST:	set	1
+ 433                     ; 86 	uint8_t init_result = sheller_init(&shell, 0x23, SHELLER_DATA_LENGTH, 128);
+ 435  00e1 ae0080        	ldw	x,#128
+ 436  00e4 89            	pushw	x
+ 437  00e5 4b08          	push	#8
+ 438  00e7 4b23          	push	#35
+ 439  00e9 ae001c        	ldw	x,#_shell
+ 440  00ec cd0000        	call	_sheller_init
+ 442  00ef 5b04          	addw	sp,#4
+ 443  00f1 6b01          	ld	(OFST+0,sp),a
+ 445                     ; 87 	if (init_result == SHELLER_ERROR) {
+ 447  00f3 0d01          	tnz	(OFST+0,sp)
+ 448  00f5 2602          	jrne	L531
+ 449  00f7               L731:
+ 450                     ; 88 		while(1);
+ 452  00f7 20fe          	jra	L731
+ 453  00f9               L531:
+ 454                     ; 90 }
+ 457  00f9 84            	pop	a
+ 458  00fa 81            	ret
+ 492                     ; 92 static void delay_ticks(uint32_t t) {
+ 493                     	switch	.text
+ 494  00fb               L31_delay_ticks:
+ 496       00000000      OFST:	set	0
+ 499  00fb               L361:
+ 500                     ; 93     while(--t);
+ 502  00fb 96            	ldw	x,sp
+ 503  00fc 1c0003        	addw	x,#OFST+3
+ 504  00ff a601          	ld	a,#1
+ 505  0101 cd0000        	call	c_lgsbc
+ 507  0104 96            	ldw	x,sp
+ 508  0105 1c0003        	addw	x,#OFST+3
+ 509  0108 cd0000        	call	c_lzmp
+ 511  010b 26ee          	jrne	L361
+ 512                     ; 94 }
+ 515  010d 81            	ret
+ 550                     ; 97 void assert_failed(uint8_t* file, uint32_t line)
+ 550                     ; 98 {
+ 551                     	switch	.text
+ 552  010e               _assert_failed:
+ 556  010e               L502:
+ 557  010e 20fe          	jra	L502
+ 696                     	xdef	_main
+ 697                     	xdef	f_UART1_RX_IRQ
+ 698                     	switch	.ubsct
+ 699  0000               _transmitMessage:
+ 700  0000 000000000000  	ds.b	8
+ 701                     	xdef	_transmitMessage
+ 702  0008               _transmitMessageIndex:
+ 703  0008 00            	ds.b	1
+ 704                     	xdef	_transmitMessageIndex
+ 705  0009               _transmitBuffer:
+ 706  0009 000000000000  	ds.b	11
+ 707                     	xdef	_transmitBuffer
+ 708  0014               _receiveBuffer:
+ 709  0014 000000000000  	ds.b	8
+ 710                     	xdef	_receiveBuffer
+ 711  001c               _shell:
+ 712  001c 000000000000  	ds.b	14
+ 713                     	xdef	_shell
+ 714                     	xref	_sheller_wrap
+ 715                     	xref	_sheller_read
+ 716                     	xref	_sheller_push
+ 717                     	xref	_sheller_init
+ 718                     	xdef	_assert_failed
+ 719                     	xref	_UART1_GetFlagStatus
+ 720                     	xref	_UART1_SendData8
+ 721                     	xref	_UART1_ReceiveData8
+ 722                     	xref	_UART1_ITConfig
+ 723                     	xref	_UART1_Cmd
+ 724                     	xref	_UART1_Init
+ 725                     	xref	_UART1_DeInit
+ 726                     	xref	_GPIO_WriteReverse
+ 727                     	xref	_GPIO_Init
+ 728                     	xref	_GPIO_DeInit
+ 729                     	xref	_CLK_SYSCLKConfig
+ 730                     	xref	_CLK_DeInit
+ 731                     	xref.b	c_x
+ 732                     	xref.b	c_y
+ 752                     	xref	c_lzmp
+ 753                     	xref	c_lgsbc
+ 754                     	end

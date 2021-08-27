@@ -712,8 +712,8 @@ CLK_ClockSwitchCmd	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8
 CLK_ClockSwitchCmd	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\src\stm8s_clk.c	213;"	function	signature:(FunctionalState NewState)
 CLK_ClockSwitchConfig	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_clk.h	361;"	prototype	signature:(CLK_SwitchMode_TypeDef CLK_SwitchMode, CLK_Source_TypeDef CLK_NewClock, FunctionalState ITState, CLK_CurrentClockState_TypeDef CLK_CurrentClockState)
 CLK_ClockSwitchConfig	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\src\stm8s_clk.c	309;"	function	signature:(CLK_SwitchMode_TypeDef CLK_SwitchMode, CLK_Source_TypeDef CLK_NewClock, FunctionalState ITState, CLK_CurrentClockState_TypeDef CLK_CurrentClockState)
-CLK_Config	main.c	13;"	prototype	file:	signature:(void)
-CLK_Config	main.c	46;"	function	file:	signature:(void)
+CLK_Config	main.c	16;"	prototype	file:	signature:(void)
+CLK_Config	main.c	57;"	function	file:	signature:(void)
 CLK_CurrentClockState_TypeDef	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_clk.h	56;"	typedef	typeref:enum:__anon55
 CLK_DeInit	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_clk.h	352;"	prototype	signature:(void)
 CLK_DeInit	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\src\stm8s_clk.c	72;"	function	signature:(void)
@@ -986,8 +986,6 @@ ENABLE	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	235;"	en
 ERROR	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	238;"	enumerator	enum:__anon5
 ESR	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2293;"	member	struct:__anon6::__anon7::__anon13
 ETR	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	617;"	member	struct:TIM1_struct
-EXIT_FAILURE	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	7;"	macro
-EXIT_SUCCESS	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	8;"	macro
 EXTI	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2621;"	macro
 EXTI_BaseAddress	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2567;"	macro
 EXTI_CR1_PAIS	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1498;"	macro
@@ -1218,8 +1216,8 @@ GPIOI	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2647;"	ma
 GPIOI_BaseAddress	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2565;"	macro
 GPIO_CR1_RESET_VALUE	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	285;"	macro
 GPIO_CR2_RESET_VALUE	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	286;"	macro
-GPIO_Config	main.c	14;"	prototype	file:	signature:(void)
-GPIO_Config	main.c	53;"	function	file:	signature:(void)
+GPIO_Config	main.c	17;"	prototype	file:	signature:(void)
+GPIO_Config	main.c	64;"	function	file:	signature:(void)
 GPIO_DDR_RESET_VALUE	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	284;"	macro
 GPIO_DeInit	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_gpio.h	139;"	prototype	signature:(GPIO_TypeDef* GPIOx)
 GPIO_DeInit	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\src\stm8s_gpio.c	53;"	function	signature:(GPIO_TypeDef* GPIOx)
@@ -1867,7 +1865,6 @@ LSI_FREQUENCY_MIN	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s
 LSI_VALUE	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	119;"	macro
 LTRH	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	331;"	member	struct:ADC1_struct
 LTRL	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	332;"	member	struct:ADC1_struct
-MB_CUR_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	9;"	macro
 MCR	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2176;"	member	struct:__anon6
 MCSR	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2189;"	member	struct:__anon6::__anon7::__anon8
 MDAR1	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2195;"	member	struct:__anon6::__anon7::__anon8
@@ -1918,9 +1915,6 @@ NOPT3	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1592;"	me
 NOPT4	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1594;"	member	struct:OPT_struct
 NOPT5	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1596;"	member	struct:OPT_struct
 NOPT7	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1600;"	member	struct:OPT_struct
-NULL	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	20;"	macro
-NULL	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	13;"	macro
-NULL	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	9;"	macro
 NonHandledInterrupt	stm8_interrupt_vector.c	12;"	function	signature:(void)
 OARH	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1334;"	member	struct:I2C_struct
 OARL	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1333;"	member	struct:I2C_struct
@@ -1942,6 +1936,7 @@ OPT_struct	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1584
 PCKENR1	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	517;"	member	struct:CLK_struct
 PCKENR2	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	520;"	member	struct:CLK_struct
 PR	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1612;"	member	struct:IWDG_struct
+PROGMEM	..\..\..\..\libs\sheller\source\crc.c	4;"	variable
 PSCR	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1069;"	member	struct:TIM4_struct
 PSCR	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1137;"	member	struct:TIM5_struct
 PSCR	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1269;"	member	struct:TIM6_struct
@@ -1959,7 +1954,6 @@ PUKR	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1524;"	mem
 Page	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2327;"	member	struct:__anon6	typeref:union:__anon6::__anon7
 PointerAttr	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	156;"	macro
 PointerAttr	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	160;"	macro
-RAND_MAX	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	10;"	macro
 RCR	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	634;"	member	struct:TIM1_struct
 RECR	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2296;"	member	struct:__anon6::__anon7::__anon13
 RESERVED	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1982;"	member	struct:UART3_struct
@@ -2146,8 +2140,8 @@ SWCR	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	515;"	memb
 SWIMCCR	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	523;"	member	struct:CLK_struct
 SWR	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	514;"	member	struct:CLK_struct
 SetBit	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2789;"	macro
-Sheller_Config	main.c	16;"	prototype	file:	signature:(void)
-Sheller_Config	main.c	74;"	function	file:	signature:(void)
+Sheller_Config	main.c	19;"	prototype	file:	signature:(void)
+Sheller_Config	main.c	85;"	function	file:	signature:(void)
 TABLE_CRC	..\..\..\..\libs\sheller\source\crc.h	10;"	macro
 TBR	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	444;"	member	struct:AWU_struct
 TDRH	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	327;"	member	struct:ADC1_struct
@@ -3310,8 +3304,8 @@ UART1_ClearITPendingBit	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc
 UART1_ClearITPendingBit	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\src\stm8s_uart1.c	775;"	function	signature:(UART1_IT_TypeDef UART1_IT)
 UART1_Cmd	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_uart1.h	349;"	prototype	signature:(FunctionalState NewState)
 UART1_Cmd	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\src\stm8s_uart1.c	184;"	function	signature:(FunctionalState NewState)
-UART1_Config	main.c	15;"	prototype	file:	signature:(void)
-UART1_Config	main.c	59;"	function	file:	signature:(void)
+UART1_Config	main.c	18;"	prototype	file:	signature:(void)
+UART1_Config	main.c	70;"	function	file:	signature:(void)
 UART1_DeInit	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_uart1.h	345;"	prototype	signature:(void)
 UART1_DeInit	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\src\stm8s_uart1.c	53;"	function	signature:(void)
 UART1_FLAG_FE	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_uart1.h	125;"	enumerator	enum:__anon207
@@ -3370,8 +3364,8 @@ UART1_PARITY_NO	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_u
 UART1_PARITY_ODD	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_uart1.h	83;"	enumerator	enum:__anon203
 UART1_PSCR_RESET_VALUE	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1796;"	macro
 UART1_Parity_TypeDef	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_uart1.h	84;"	typedef	typeref:enum:__anon203
-UART1_RX_IRQ	main.c	19;"	prototype	file:	signature:(void)
-UART1_RX_IRQ	main.c	37;"	function	signature:(void)
+UART1_RX_IRQ	main.c	22;"	prototype	file:	signature:(void)
+UART1_RX_IRQ	main.c	48;"	function	signature:(void)
 UART1_RX_IRQ	stm8_interrupt_vector.c	20;"	prototype	file:	signature:(void)
 UART1_ReceiveData8	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_uart1.h	360;"	prototype	signature:(void)
 UART1_ReceiveData8	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\src\stm8s_uart1.c	451;"	function	signature:(void)
@@ -3907,18 +3901,12 @@ WWDG_WR_W	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1660;
 WWDG_struct	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	1633;"	struct
 _COSMIC_	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	83;"	macro
 _IAR_	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	87;"	macro
-_INLINE	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	13;"	macro
-_INLINE	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	15;"	macro
 _RAISONANCE_	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	85;"	macro
 __I	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	206;"	macro
 __IO	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	208;"	macro
 __MODS0__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\mods0.h	11;"	macro
 __O	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	207;"	macro
-__SIZE_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	8;"	macro
-__SIZE_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	17;"	macro
-__STDDEF__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	5;"	macro
 __STDINT__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	5;"	macro
-__STDLIB__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	5;"	macro
 __STM8S_ADC1_H	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_adc1.h	29;"	macro
 __STM8S_ADC2_H	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_adc2.h	31;"	macro
 __STM8S_AWU_H	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_awu.h	30;"	macro
@@ -3951,49 +3939,27 @@ __STM8S_UART2_H	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_u
 __STM8S_UART3_H	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_uart3.h	30;"	macro
 __STM8S_UART4_H	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_uart4.h	30;"	macro
 __STM8S_WWDG_H	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s_wwdg.h	30;"	macro
-__STRING__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	6;"	macro
-__WCHAR_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	13;"	macro
-__WCHAR_T__	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	22;"	macro
-_checkcrc16	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	59;"	prototype	signature:(void)
-_checkcrc16x	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	60;"	prototype	signature:(void)
-_checksum	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	55;"	prototype	signature:(void)
-_checksum16	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	57;"	prototype	signature:(void)
-_checksum16x	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	58;"	prototype	signature:(void)
-_checksumx	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	56;"	prototype	signature:(void)
-_fctcpy	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	61;"	prototype	signature:(char)
 _stext	stm8_interrupt_vector.c	22;"	prototype	file:
 _vectab	stm8_interrupt_vector.c	24;"	variable
-abort	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	63;"	macro
-abs	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	36;"	prototype	signature:(int i)
-assert_failed	main.c	87;"	function	signature:(uint8_t* file, uint32_t line)
+assert_failed	main.c	98;"	function	signature:(uint8_t* file, uint32_t line)
 assert_failed	stm8s_conf.h	108;"	prototype	signature:(uint8_t* file, uint32_t line)
 assert_param	stm8s_conf.h	106;"	macro
 assert_param	stm8s_conf.h	110;"	macro
-atof	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	37;"	prototype	signature:(char *nptr)
-atoi	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	38;"	prototype	signature:(char *nptr)
-atol	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	39;"	prototype	signature:(char *nptr)
 bool	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	231;"	typedef	typeref:enum:__anon2
-calloc	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	40;"	prototype	signature:(unsigned int nelem, unsigned int elsize)
-crc16_table	..\..\..\..\libs\sheller\source\crc.c	4;"	variable
-delay_ticks	main.c	17;"	prototype	file:	signature:(uint32_t t)
-delay_ticks	main.c	82;"	function	file:	signature:(uint32_t t)
+delay_ticks	main.c	20;"	prototype	file:	signature:(uint32_t t)
+delay_ticks	main.c	93;"	function	file:	signature:(uint32_t t)
 disableInterrupts	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2717;"	macro
 disableInterrupts	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2726;"	macro
 disableInterrupts	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2736;"	macro
-div	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	41;"	prototype	signature:(int numer, int denom)
-div_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	29;"	typedef	typeref:struct:__anon246
-eepera	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	41;"	macro
 enableInterrupts	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2716;"	macro
 enableInterrupts	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2725;"	macro
 enableInterrupts	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2735;"	macro
-exit	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	42;"	prototype	signature:(int status)
-free	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	43;"	prototype	signature:(void *ptr)
 get_crc	..\..\..\..\libs\sheller\source\crc.c	39;"	function	signature:(const uint8_t *data, const uint16_t length)
 get_crc	..\..\..\..\libs\sheller\source\crc.c	57;"	function	signature:(const uint8_t *data, const uint16_t length)
-get_crc	..\..\..\..\libs\sheller\source\crc.h	16;"	prototype	signature:(const uint8_t *data, const uint16_t length)
+get_crc	..\..\..\..\libs\sheller\source\crc.h	12;"	prototype	signature:(const uint8_t *data, const uint16_t length)
 get_crc_by_byte	..\..\..\..\libs\sheller\source\crc.c	50;"	function	signature:(uint16_t *crc_value, const uint8_t byte)
 get_crc_by_byte	..\..\..\..\libs\sheller\source\crc.c	71;"	function	signature:(uint16_t *crc_value, const uint8_t byte)
-get_crc_by_byte	..\..\..\..\libs\sheller\source\crc.h	17;"	prototype	signature:(uint16_t *crc_value, const uint8_t byte)
+get_crc_by_byte	..\..\..\..\libs\sheller\source\crc.h	13;"	prototype	signature:(uint16_t *crc_value, const uint8_t byte)
 halt	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2723;"	macro
 halt	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2732;"	macro
 halt	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2742;"	macro
@@ -4013,32 +3979,12 @@ interrupt_instruction	stm8_interrupt_vector.c	8;"	member	struct:interrupt_vector
 interrupt_vector	stm8_interrupt_vector.c	7;"	struct	file:
 intmax_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	41;"	typedef
 intptr_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdint.h	36;"	typedef
-isqrt	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	53;"	prototype	signature:(unsigned int)
-labs	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	44;"	prototype	signature:(long l)
-ldiv	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	45;"	prototype	signature:(long numer, long denom)
-ldiv_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	34;"	typedef	typeref:struct:__anon247
-lsqrt	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	54;"	prototype	signature:(unsigned long)
-main	main.c	21;"	function
-malloc	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	46;"	prototype	signature:(unsigned int size)
-memchr	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	34;"	prototype	signature:(void *s, char c, unsigned int n)
-memcmp	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	28;"	prototype	signature:(void *s1, void *s2, unsigned int n)
-memcpy	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	35;"	prototype	signature:(void *s1, void *s2, unsigned int n)
-memmove	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	36;"	prototype	signature:(void *s1, void *s2, unsigned int n)
-memset	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	37;"	prototype	signature:(void *s, char c, unsigned int n)
+main	main.c	24;"	function
 nop	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2720;"	macro
 nop	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2729;"	macro
 nop	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2739;"	macro
-offsetof	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	23;"	macro
 package_length	..\..\..\..\libs\sheller\source\sheller.h	30;"	member	struct:__anon1
-ptrdiff_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	17;"	typedef
-quot	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	27;"	member	struct:__anon246
-quot	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	32;"	member	struct:__anon247
-rand	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	47;"	prototype	signature:(void)
-realloc	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	48;"	prototype	signature:(void *ptr, unsigned int size)
-receiveBuffer	main.c	11;"	variable
-receiveBufferIndex	main.c	10;"	variable
-rem	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	28;"	member	struct:__anon246
-rem	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	33;"	member	struct:__anon247
+receiveBuffer	main.c	10;"	variable
 rim	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2718;"	macro
 rim	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2727;"	macro
 rim	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2737;"	macro
@@ -4069,27 +4015,11 @@ sheller_write_received_package	..\..\..\..\libs\sheller\source\sheller.c	68;"	fu
 sim	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2719;"	macro
 sim	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2728;"	macro
 sim	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2738;"	macro
-size_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stddef.h	9;"	typedef
-size_t	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	18;"	typedef
-srand	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	49;"	prototype	signature:(unsigned int seed)
 start_byte	..\..\..\..\libs\sheller\source\sheller.h	27;"	member	struct:__anon1
 start_byte_pos	..\..\..\..\libs\sheller\source\sheller.h	36;"	member	struct:__anon1
-strcat	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	20;"	prototype	signature:(char *s1, char *s2)
-strchr	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	21;"	prototype	signature:(char *s, char c)
-strcmp	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	29;"	prototype	signature:(char *s1, char *s2)
-strcpy	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	22;"	prototype	signature:(char *s1, char *s2)
-strcspn	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	31;"	prototype	signature:(char *s1, char *s2)
-strlen	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	32;"	prototype	signature:(char *s)
-strncat	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	23;"	prototype	signature:(char *s1, char *s2, unsigned int n)
-strncmp	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	30;"	prototype	signature:(char *s1, char *s2, unsigned int n)
-strncpy	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	24;"	prototype	signature:(char *s1, char *s2, unsigned int n)
-strpbrk	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	25;"	prototype	signature:(char *s1, char *s2)
-strrchr	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	26;"	prototype	signature:(char *s, char c)
-strspn	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	33;"	prototype	signature:(char *s1, char *s2)
-strstr	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\string.h	27;"	prototype	signature:(char *s1, char *s2)
-strtod	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	50;"	prototype	signature:(char *s, char **endptr)
-strtol	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	51;"	prototype	signature:(char *s, char **endptr, int base)
-strtoul	..\..\..\..\..\..\..\..\program files (x86)\cosmic\fse_compilers\cxstm8\hstm8\stdlib.h	64;"	macro
+transmitBuffer	main.c	11;"	variable
+transmitMessage	main.c	14;"	variable
+transmitMessageIndex	main.c	13;"	variable
 trap	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2721;"	macro
 trap	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2730;"	macro
 trap	stm8s_stdperiph_lib\libraries\stm8s_stdperiph_driver\inc\stm8s.h	2740;"	macro
